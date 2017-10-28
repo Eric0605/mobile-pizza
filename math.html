@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Birthday Paradox</title>
+  </head>
+  <body>
+    <p>Numer of people: </p>
+    <input type="number" name="enter" class="enter" value="" id="people"/>
+    <input type="button" value="click" OnClick="kk()"/>
+    <p> Properbility (in decimal form please): </p>
+    <input type="number" name="enter" class="enter" value="" id="properbility"/>
+    <input type="button" value="click" OnClick="pp()"/>
+    <p> Properbality or Number of people needed:</p>
+    <p id="answer"></p>
+    <script type="text/javascript">
+       var lol = document.getElementById('people');
+       function kk() {
+         var x = lol.value;
+         var op = 364/365;
+         var n = 0.5*x*(x-1);
+         var p = Math.pow(op,n);
+         var pf = 1 - p;
+         document.getElementById('answer').innerHTML = pf.toFixed(3)
+       };
+       var b = document.getElementById('properbility');
+       function pp() {
+         var a = b.value;
+         var op = Math.log(364/365);
+         var d = Math.log(1 - a) * 2;
+         var c = d/op;
+         var n = (1 + Math.sqrt(1 + 4 * c))/2;
+         document.getElementById('answer').innerHTML = n.toFixed();
+       }
+    </script>
+</body>
+</html>
